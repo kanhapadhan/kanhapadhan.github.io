@@ -380,7 +380,7 @@ tr:first-child>th {
   transition: all .4s ease;
 }
 #hue {
-  display: none;
+  /*display: none;*/
   --stops:
     oklch(0.7885 0.228 0),
     oklch(0.7885 0.228 40),
