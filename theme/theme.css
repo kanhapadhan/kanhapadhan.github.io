@@ -1,0 +1,53 @@
+#theme-wrapper {
+  display: flex;
+  flex-direction: column;
+  touch-action: manipulation;
+  margin-left: auto;
+  
+}
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  touch-action: manipulation;
+  border: none;
+  outline: none;
+  height: 40px;
+  transition: all .4s ease;
+}
+
+div .icon-button:not(.selected) {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon-button .material-symbols-rounded {
+  color: var(--C19);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .4s ease;
+}
+
+
+.icon-button::before {
+  border-radius: 20px;
+  background: currentColor;
+  opacity: 0.1;
+  transition: opacity 300ms;
+  content: '';
+  position: absolute;
+  width: 40px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.icon-button:hover::before {
+  opacity: 0.17;
+}
