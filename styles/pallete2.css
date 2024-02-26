@@ -1,0 +1,88 @@
+@layer demo.vars {
+  html {
+    --hue: 320;
+    --P1: oklch(99% .05 var(--hue));
+    --P2: oklch(90% .1 var(--hue));
+    --P3: oklch(80% .15 var(--hue));
+    --P4: oklch(72% .25 var(--hue));
+    --P5: oklch(67% .31 var(--hue));
+    --P6: oklch(50% .27 var(--hue));
+    --P7: oklch(35% .25 var(--hue));
+    --P8: oklch(25% .2 var(--hue));
+    --P9: oklch(13% .2 var(--hue));
+    --P10: oklch(7% .1 var(--hue));
+
+  }
+}
+
+@layer demo.vars {
+  html {
+    --hue: 260;
+    --P1: lch(99 12 var(--hue));
+    --P2: lch(90 30 var(--hue));
+    --P3: lch(80 50 var(--hue));
+    --P4: lch(72 55 var(--hue));
+    --P5: lch(67 75 var(--hue));
+    --P6: lch(50 60 var(--hue));
+    --P7: lch(35 55 var(--hue));
+    --P8: lch(25 30 var(--hue));
+    --P9: lch(15 15 var(--hue));
+    --P10: lch(7 5 var(--hue));
+
+  }
+}
+@layer demo.vars {
+  @media (prefers-color-scheme: dark) {
+    html {
+      --text-1: var(--P1);
+      --text-2: var(--P2);
+      --surface-1: var(--P10);
+      --surface-2: var(--P9);
+      --surface-3: var(--P8);
+
+      --passed-col: oklch(25% .2 140);
+      --failed-col: oklch(25% .2 20);
+      --today-col: oklch(25% .2 270);
+    }
+  }
+}
+
+@layer demo.vars {
+  @media (prefers-color-scheme: light) {
+    html {
+      --text-1: var(--P10);
+      --text-2: var(--P9);
+      --surface-1: var(--P1);
+      --surface-2: var(--P2);
+      --surface-3: var(--P3);
+
+      --passed-col: oklch(80% .2 140);
+      --failed-col: oklch(80% .3 20);
+      --today-col: oklch(80% .35 270);
+    }
+  }
+}
+
+body.light-theme {
+  --text-1: var(--P10);
+  --text-2: var(--P9);
+  --surface-1: var(--P1);
+  --surface-2: var(--P2);
+  --surface-3: var(--P3);
+
+  --passed-col: oklch(90% .4 150/ 30%);
+  --failed-col: oklch(90% .4 40/ 30%);
+  --today-col: var(--P7);
+}
+
+body.dark-theme {
+  --text-1: var(--P1);
+  --text-2: var(--P2);
+  --surface-1: var(--P10);
+  --surface-2: var(--P9);
+  --surface-3: var(--P8);
+
+  --passed-col: oklch(50% .2 140);
+  --failed-col: oklch(50% .2 20);
+  --today-col: #6366F1;
+}

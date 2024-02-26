@@ -1,0 +1,105 @@
+#tab2 {
+  width: 100%;
+  --margin: 10px;
+  
+  display: none;
+  flex-direction: column;
+  gap: var(--margin);
+  letter-spacing: .8px;
+  transition: all .4s;
+}
+#tab2.active {
+  display: flex;
+  opacity: 1;
+}
+.card-group {
+  background: ;
+  padding: 10px 5px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--margin);
+}
+.card-group .card-group-title {
+  background: var(--C3);
+  color: var(--C16);
+  border-radius: 20px;
+  width: calc(100% - 20px);
+  padding: 5px 0;
+  margin: 0;
+  margin: auto;
+  font-size: inherit;
+  text-align: center;
+  transition: all .4s;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--margin);
+  
+  flex-wrap: wrap;
+}
+.stats-card {
+  /*--header-col: #9A73B9;
+  --data-col: #692E98;
+  background: #F3E4FF;
+  */
+  --header-col: var(--C17);
+  --data-col: var(--C14);
+  background: var(--C3);
+  
+  height: 70px;
+  width: 140px;
+  
+  border-radius: 20px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.stats-card .stats-title {
+  font-size: 15px;
+  
+  margin: 0;
+  color: var(--header-col);
+}
+
+.stats-card .stats-data {
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--data-col);
+}
+
+.last-stats-change {
+  font-size: 13px;
+  color: #B67878;
+}
+
+.passed-days {
+  background: #D7FFD2;
+  --header-col: #7DB973;
+  --data-col: #3B982E;
+}
+.failed-days {
+  background: #FFDEDE;
+  --header-col: #CF5F5F;
+  --data-col: #A70B0B;
+}
+
+.dark-theme .passed-days {
+  background: #33552E;
+  --header-col: #94B48E;
+  --data-col: #7FFF6F;
+}
+
+.dark-theme .failed-days {
+  background: #642727;
+  --header-col: #B46F6F;
+  --data-col: #FF4343;
+}
