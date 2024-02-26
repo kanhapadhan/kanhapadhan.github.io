@@ -395,8 +395,9 @@ tr:first-child>th {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 50px;
-  width: 100%;
+  width: 90%;
   height: 10px;
+  margin: 20px 0;
   background-image: linear-gradient(to right, var(--stops));
 
 }
