@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Calendar Streak</title>
+
+  <!-- HTML -->
+
+  <link rel="icon" type="image/png" href="icons/icon-128x128.png">
+  
+  
+  <!-- Custom Styles -->
+  
+  
+  <link rel="stylesheet" href="theme/theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+  <header id="main-header">
+    <div class="logo">
+      <span class="material-symbols-rounded">sprint</span>
+    </div>
+    <div id="header-title">Morning Walk+Run </div>
+    <div id="theme-wrapper">
+        <div id="theme-auto" class="icon-button selected" title="Adapt theme to system automatically">
+          <span class="material-symbols-rounded">brightness_medium</span>
+        </div>
+        <div>
+          <div id="theme-light" class="icon-button" title="Always use light theme">
+            <span class="material-symbols-rounded filled">light_mode</span>
+          </div>
+          <div id="theme-dark" class="icon-button" title="Always use dark theme">
+            <span class="material-symbols-rounded filled">dark_mode</span>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <div id="tab1" class="content active">
+    <div class="calendar main-flex-child">
+      <div class="cal-header">
+        <div id="prevBtn">&#8249;</div>
+        <div id="current-month">Oct</div>
+        <div id="nextBtn">&#8250;</div>
+      </div>
+      <div class="weekdays">
+        <div>S</div>
+        <div>M</div>
+        <div>T</div>
+        <div>W</div>
+        <div>T</div>
+        <div>F</div>
+        <div>S</div>
+      </div>
+      <div class="days-container"></div>
+    </div>
+
+    <div class="main-flex-child card-container">
+      <table id="stats">
+        <tr>
+          <th colspan="2">Stats</th>
+        </tr>
+        <tr>
+          <th>Passed Days</th>
+          <td id="passedDays">-</td>
+        </tr>
+        <tr>
+          <th>Failed Days</th>
+          <td id="failedDays">-</td>
+        </tr>
+        <tr>
+          <th>Total days</th>
+          <td id="totalDays">-</td>
+        </tr>
+        <tr>
+          <th>Passed %</th>
+          <td id="passedPercent">-</td>
+        </tr>
+        <tr>
+          <th>Streak</th>
+          <td id="longestStreak">-</td>
+        </tr>
+      </table>
+
+      <div class="help-container card">
+        <div class="card-header">
+          Help
+        </div>
+        <div class="card-body">
+          <div class="help-child">
+            <div class="help-cols passed-col"></div>
+            <div>Passed</div>
+          </div>
+          <div class="help-child">
+            <div class="help-cols failed-col"></div>
+            <div>Failed</div>
+          </div>
+
+          <div class="help-child">
+            <div class="help-cols today-col"></div>
+            <div>Today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="go_btn">
+      <div>See Dashboard</div>
+      <span class="material-symbols-rounded">East</span>
+    </div>
+    
+  </div>
+
+  <!-- tab2 -->
+  <div id="tab2" class="content">
+    <section class="card-group">
+      <header>
+        <h2 class="card-group-title">This Month</h2>
+      </header>
+      <div class="cards-container">
+        <article class="stats-card">
+          <header>
+            <h3 class="stats-title">Longest Streak</h3>
+          </header>
+          <section class="stats-data" id="longest_streak">58</section>
+        </article>
+        <article class="stats-card passed-days">
+          <header>
+            <h3 class="stats-title">Passed Days</h3>
+          </header>
+          <section class="stats-data" id="passed_days">14</section>
+        </article>
+        <article class="stats-card failed-days">
+          <header>
+            <h3 class="stats-title" >Failed Days</h3>
+          </header>
+          <section class="stats-data" id="failed_days">7</section>
+          <section class="last-stats-change">Last on Feb 21</section>
+        </article>
+        <article class="stats-card">
+          <header>
+            <h3 class="stats-title" >Passed %</h3>
+          </header>
+          <section class="stats-data" id="passed_percent">65%</section>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div id="tab3" class="content">
+    <div class="full-card">
+      <div class="card-header">Notes</div>
+      <ul class="card-body">
+        <li> break the Loop </li>
+        <li>set Target 🎯</li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-navigation-wrapper">
+    <div class="nav-item active" onclick="openTab(event, 'tab1')">
+      <span class="material-symbols-rounded">home</span>
+      <label for="">Home</label>
+    </div>
+    <div class="nav-item" onclick="openTab(event, 'tab2')">
+      <span class="material-symbols-rounded">bar_chart</span>
+      <label for="">Dashboard</label>
+    </div>
+    <div class="nav-item" onclick="openTab(event, 'tab3')">
+      <span class="material-symbols-rounded">notes</span>
+      <label for="">Notes</label>
+    </div>
+    <!--  
+    <div class="nav-item">
+      <span class="material-symbols-rounded">settings</span>
+      <label for="">Settings</label>
+    </div>  -->
+  </div>
+
+  
+
+
+  <!-- Project -->
+
+  <input type="range" name="hue" id="hue" min="0" max="360" value="100" oninput="changeHue(this.value)">
+  <script src="scripts/main.js" type="module"></script>
+  <script src="theme/theme.js"></script>
+
+</body>
+
+</html>
