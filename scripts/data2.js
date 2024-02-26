@@ -14,11 +14,6 @@ let monthlyData = [
       1,1,1,1,0,1,1,
       1,1,1,1,1
       ]
-  },
-  {
-    month: 3,
-    year: 2024,
-    data: [2,5,7,8,9]
   }
   // Add more months as needed
 ];
