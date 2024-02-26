@@ -109,10 +109,10 @@ let hueSlider = document.querySelector('#hue')
 hueSlider.addEventListener('input',()=>{
   hueSlider
 })
-function changeHue(hue=100) {
+export function changeHue(hue=100) {
   document.documentElement.style.setProperty('--hue', hue);
 }
-
+window.changeHue = changeHue;
 
 export function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
