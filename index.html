@@ -113,7 +113,7 @@
       <div>See Dashboard</div>
       <span class="material-symbols-rounded">East</span>
     </div>
-    <input type="range" name="hue" id="hue" min="0" max="360" value="100" oninput="changeHue(this.value)">
+    
   </div>
 
   <!-- tab2 -->
@@ -150,6 +150,7 @@
       </div>
     </section>
   </div>
+  <!-- tab 3 -->
   <div id="tab3" class="content">
     <div class="full-card">
       <div class="card-header">Notes</div>
@@ -159,8 +160,17 @@
 
       </ul>
     </div>
+    <div class="full-card">
+      <h3 class="card-header">Settings</h3>
+      <div class="card-body">
+        <span>Change Theme color</span><br>
+        Hue: <span id="hueDisplay">300</span>
+        <input type="range" name="hue" id="hue" min="0" max="360" value="300" oninput="changeHue(this.value)">
+      </div>
+    </div>
   </div>
 
+<!-- Bottom navigation bar -->
   <div class="bottom-navigation-wrapper">
     <div class="nav-item active" onclick="openTab(event, 'tab1')">
       <span class="material-symbols-rounded">home</span>
@@ -174,7 +184,7 @@
       <span class="material-symbols-rounded">notes</span>
       <label for="">Notes</label>
     </div>
-    <!--  
+    <!-- 
     <div class="nav-item">
       <span class="material-symbols-rounded">settings</span>
       <label for="">Settings</label>
@@ -182,7 +192,7 @@
   </div>
 
   
-  <!-- Project -->
+  <!-- scripts -->
   <script src="scripts/main.js" type="module"></script>
   <script src="theme/theme.js"></script>
 

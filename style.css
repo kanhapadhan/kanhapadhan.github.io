@@ -351,6 +351,8 @@ tr:first-child>th {
   display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 #tab3.active {
   display: flex;
@@ -395,7 +397,7 @@ tr:first-child>th {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 50px;
-  width: 90%;
+  width: 100%;
   height: 10px;
   margin: 20px 0;
   background-image: linear-gradient(to right, var(--stops));

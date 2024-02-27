@@ -1,5 +1,5 @@
 html {
-  --hue: 320;
+  --hue: 300;
   --P1: oklch(99% .05 var(--hue));
   --P2: oklch(94.5% .075 var(--hue));
   --P3: oklch(90% .1 var(--hue));

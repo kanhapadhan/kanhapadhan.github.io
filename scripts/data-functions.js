@@ -68,6 +68,7 @@ if (containsOnlyZeroOne) {
   setData('#totalDays', totalDays)
   setData('#longestStreak', longestStreak)
 
+// dashboard 
   setData('#passed_days', passedDays)
   setData('#passed_percent', passedPercent + '%')
   setData('#failed_days', failedDays)

@@ -106,11 +106,13 @@ loadDataToCalender(currentMonthData)
 
 // hue slider
 let hueSlider = document.querySelector('#hue')
+let hueDisplay = document.querySelector('#hueDisplay')
 hueSlider.addEventListener('input',()=>{
   hueSlider
 })
 export function changeHue(hue=100) {
   document.documentElement.style.setProperty('--hue', hue);
+  hueDisplay.innerHTML = hue;
 }
 window.changeHue = changeHue;
 
