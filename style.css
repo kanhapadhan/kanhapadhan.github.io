@@ -442,7 +442,7 @@ sunday
 #go_btn {
   width: 80%;
   height: 60px;
-  margin: 20px 0;
+  margin-top: 20px;
   background: var(--C3);
   color: var(--C16);
   display: flex;
