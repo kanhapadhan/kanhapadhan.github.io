@@ -76,11 +76,6 @@
   color: var(--data-col);
 }
 
-.last-stats-change {
-  font-size: 13px;
-  color: #B67878;
-}
-
 .passed-days {
   background: #D7FFD2;
   --header-col: #7DB973;
