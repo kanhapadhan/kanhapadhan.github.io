@@ -1,11 +1,11 @@
-@import "/styles/pallet4.css";
-@import url(/styles/material-symbols.css);
-@import url(/styles/bottom-navigation.css);
-@import url(/styles/tab2.css);
+@import url("/styles/pallet4.css");
+@import url("/styles/material-symbols.css");
+@import url("/styles/bottom-navigation.css");
+@import url("/styles/tab2.css");
 
 @font-face {
   font-family: 'ProductSans';
-  src: url(/assets/ProductSans.ttf);
+  src: url("/assets/ProductSans.ttf");
 }
 
 
