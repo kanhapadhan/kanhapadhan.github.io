@@ -41,7 +41,7 @@ let monthlyData = [
       0,1,1,0,0,1,1,
       0,1,1,1,0,1,1,
       1,1,1,0,1,1,0,
-      1,0
+      1,0,0,1
       ]
   }
   // Add more months as needed
