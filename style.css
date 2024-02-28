@@ -1,4 +1,4 @@
-@import url("/styles/pallet3.css");
+@import url("/styles/pallet4.css");
 @import url("/styles/material-symbols.css");
 @import url("/styles/bottom-navigation.css");
 @import url("/styles/tab2.css");
@@ -446,7 +446,7 @@ sunday
   height: 60px;
   margin-top: 20px;
   background: var(--C3);
-  color: var(--C16);
+  color: var(--C18);
   display: flex;
   justify-content: space-between;
   align-items: center;

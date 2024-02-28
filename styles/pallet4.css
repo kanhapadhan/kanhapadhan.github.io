@@ -14,12 +14,12 @@ html {
   --P12: oklch(55% .325 var(--hue));
   --P13: oklch(50% .35 var(--hue));
   --P14: oklch(42.5% .315 var(--hue));
-  --P15: oklch(35% .28 var(--hue));
-  --P16: oklch(30% .25 var(--hue));
-  --P17: oklch(27.5% .225 var(--hue));
-  --P18: oklch(20% .2 var(--hue));
-  --P19: oklch(16% .14 var(--hue));
-  --P20: oklch(5% .12 var(--hue));
+  --P15: oklch(39% .28 var(--hue));
+  --P16: oklch(35% .25 var(--hue));
+  --P17: oklch(33% .12 var(--hue));
+  --P18: oklch(30% .07 var(--hue));
+  --P19: oklch(22% .02 var(--hue));
+  --P20: oklch(5% .01 var(--hue));
   
 
   --C1: var(--P1);
