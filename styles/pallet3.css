@@ -42,6 +42,10 @@ html {
   --C18: var(--P18);
   --C19: var(--P19);
   --C20: var(--P20);
+
+  --passed-col: oklch(80% .2 140);
+  --failed-col: oklch(80% .3 20);
+  --today-col: #3D85FE;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,5 +166,9 @@ body.dark-theme {
   --C18: var(--P3);
   --C19: var(--P2);
   --C20: var(--P1);
+  
+  --passed-col: oklch(45% .2 140);
+  --failed-col: oklch(45% .2 20);
+  --today-col: #0073DD;
 }
 
