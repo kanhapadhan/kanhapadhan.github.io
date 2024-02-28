@@ -77,9 +77,9 @@ html {
     --C19: var(--P2);
     --C20: var(--P1);
     
-  --passed-col: oklch(45% .2 140);
-  --failed-col: oklch(45% .2 20);
-  --today-col: #0073DD;
+    --passed-col: oklch(45% .2 140);
+    --failed-col: oklch(45% .2 20);
+    --today-col: #0073DD;
   }
 }
 
