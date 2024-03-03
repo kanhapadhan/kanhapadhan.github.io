@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'ProductSans';
-  src: url("/assets/ProductSans.ttf");
+  src: url(/assets/ProductSans.ttf);
   font-display: swap;
 }
 
@@ -34,7 +34,8 @@ body {
 header#main-header {
   width: 100vw;
   height: 45px;
-  background: var(--C5);
+  background: var(--P15);
+  color: var(--P3);
   position: fixed;
   top: 0;
   left: 0;
@@ -62,7 +63,7 @@ header#main-header {
   justify-content: center;
 }
 .logo > span {
-  color: var(--text-2);
+  color: inherit;
   font-size: 35pt;
   transition: color .4s;
   width: 45px;
@@ -77,6 +78,8 @@ header#main-header {
 #theme-wrapper {
   /* ./theme.css */
   flex: 1;
+  color: inherit;
+  width: 45px;
 }
 
 
@@ -87,7 +90,7 @@ header#main-header {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  
+  animation: content .3s ease-in-out;
 }
 #tab1.active {
   display: flex;
@@ -120,15 +123,16 @@ header#main-header {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  
   transition: background .4s;
-
 }
 
 #prevBtn,
 #nextBtn {
-  flex: 1;
+  
   font-size: 20pt;
-  background: var(--surface-3);
+  height: 35px;width: 40px;
+  background: var(--C4);
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -190,10 +194,11 @@ header#main-header {
   font-size: 11pt;
 
   transition: background .4s, color .4s;
-  animation: pop .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
 }
-
+.dayEl {
+  animation: pop .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 .weekdays div {
   background: none;
   aspect-ratio: 2/1;
@@ -356,6 +361,7 @@ tr:first-child>th {
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  animation: content .3s ease-in-out;
 }
 #tab3.active {
   display: flex;
@@ -425,16 +431,26 @@ tr:first-child>th {
 
 @keyframes pop {
   0% {
-    scale: 0.5;
+    transform: translateX(var(--anim));
+    opacity: 0;
   }
-  50% {
-    scale: 1.03;
-  }
+  
   100% {
-    scale: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
+@keyframes content {
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 /*
 sunday 
 
@@ -447,9 +463,9 @@ sunday
 #go_btn {
   width: 80%;
   height: 60px;
-  margin-top: 20px;
+  margin-top: 10px;
   background: var(--C3);
-  color: var(--C18);
+  color: var(--C16);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -479,4 +495,7 @@ sunday
 
 
 /* media query end */
+}
+@media (min-width: 600px) {
+  
 }
