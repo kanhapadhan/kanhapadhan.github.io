@@ -71,6 +71,7 @@ let _data = createCalendar()
 //console.log(_data);
 
 nextBtn.addEventListener('click', (ev) => {
+  document.documentElement.style.setProperty('--anim', '25px');
     let nextMonth = _data.month + 1;
     let nextYear = _data.year;
 
@@ -86,6 +87,7 @@ nextBtn.addEventListener('click', (ev) => {
 });
 
 prevBtn.addEventListener('click', (ev) => {
+  document.documentElement.style.setProperty('--anim', '-25px');
     let prevMonth = _data.month - 1;
     let prevYear = _data.year;
 
