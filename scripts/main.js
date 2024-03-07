@@ -43,7 +43,7 @@ function createCalendar(date, month, year) {
   for (let day = 1; day <= daysInMonth; day++) {
     const dayElement = document.createElement('div');
     dayElement.className = 'dayEl'
-    dayElement.style.animationDelay=(day*4)+'ms';
+    //dayElement.style.animationDelay=(day*4)+'ms';
     if (date && day === date) {
       dayElement.classList.add('current-date');
     }

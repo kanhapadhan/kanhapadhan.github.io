@@ -116,6 +116,9 @@ header#main-header {
 .calendar:hover .dayEl:not(.failed,.passed,.current-date) {
   background: var(--C4);
 }
+.calendar:hover .weekdays {
+  border-bottom: 2px solid var(--C4);
+}
 .cal-header {
 
   text-align: center;
