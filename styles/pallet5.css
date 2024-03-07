@@ -16,8 +16,8 @@ html {
   --P14: oklch(40% .315 var(--hue));
   --P15: oklch(35% .28 var(--hue));
   --P16: oklch(30% .25 var(--hue));
-  --P17: oklch(27% .225 var(--hue));
-  --P18: oklch(26% .1 var(--hue));
+  --P17: oklch(37% .16 var(--hue));
+  --P18: oklch(32% .07 var(--hue));
   --P19: oklch(25% .04 var(--hue));
   --P20: oklch(15% .02 var(--hue));
   
