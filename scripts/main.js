@@ -1,7 +1,7 @@
-import monthlyData from './data2.js';
+import { monthlyData_M, exerciseData } from './data.js';
 import {findMonthlyDataArr,loadDataToCalender} from './data-functions.js';
 
-//let monthlyData = monthlyData;
+let monthlyData = exerciseData;
 
 const $ = document.querySelector.bind(document);
 

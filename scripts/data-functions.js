@@ -23,10 +23,10 @@ export function loadDataToCalender(data = []) {
   }
 
   let dayElems = document.querySelectorAll('.dayEl')
-  
+//window.loadDataToCalender = loadDataToCalender  
 
 const containsOnlyZeroOne = data.every(num => num === 0 || num === 1);
-const containsOnlyIntegers = data.every((num, index) => Number.isInteger(num) && num > 0);
+const containsOnlyIntegers = data.every((num, index) => Number.isInteger(num) && num!==0);
 
 let passedDays, failedDays, totalDays, passedPercent, longestStreak;
 
@@ -44,16 +44,23 @@ if (containsOnlyZeroOne) {
   longestStreak = findLongestStreak(data);
 } else if (containsOnlyIntegers) {
   
-  data.forEach((val, i) => {
-    dayElems[val - 1].classList.add('passed')
-  });
   
   console.log('int');
-  passedDays = data.length;
-  totalDays = Math.max(...data);
-  failedDays = totalDays - passedDays;
+  totalDays = data.length;
+  let passed_days = data.filter(n=>n>0)
+  let failed_days = data.filter(v=>v<0)
+  //another way: failedDays = totalDays - passedDays
+  passedDays = passed_days.length
+  failedDays = failed_days.length
   passedPercent = ((passedDays / totalDays) * 100).toFixed(2);
-  longestStreak = findLongestConsecutiveLength(data);
+  longestStreak = longestConsecutivePositive(data);
+  
+  passed_days.forEach((val, i) => {
+    dayElems[val - 1].classList.add('passed')
+  });
+  failed_days.forEach((val, i) => {
+    dayElems[Math.abs(val) - 1].classList.add('failed')
+  });
 } else {
   console.log('err')
 }
@@ -68,7 +75,6 @@ if (containsOnlyZeroOne) {
   setData('#totalDays', totalDays)
   setData('#longestStreak', longestStreak)
 
-// dashboard 
   setData('#passed_days', passedDays)
   setData('#passed_percent', passedPercent + '%')
   setData('#failed_days', failedDays)
@@ -91,26 +97,19 @@ function findLongestStreak(arr) {
   return maxCount;
 }
 
-function findLongestConsecutiveLength(arr) {
-    if (arr.length === 0) {
-        return 0;
-    }
-    
-    let longestStreak = 0;
-    let currentStreak = 1;
+function longestConsecutivePositive(arr) {
+    let maxCount = 0;
+    let count = 0;
 
-    // Sort the array to make sure consecutive integers are adjacent
-    arr.sort((a, b) => a - b);
-
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] === arr[i - 1] + 1) {
-            currentStreak++;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0 && (i === 0 || arr[i] === arr[i - 1] + 1)) {
+            count++;
+            maxCount = Math.max(maxCount, count);
         } else {
-            longestStreak = Math.max(longestStreak, currentStreak);
-            currentStreak = 1;
+            count = 0;
         }
     }
 
-    return Math.max(longestStreak, currentStreak);
+    return maxCount;
 }
 

@@ -2,6 +2,8 @@
 @import url("/styles/material-symbols.css");
 @import url("/styles/bottom-navigation.css");
 @import url("/styles/tab2.css");
+@import url("/styles/tab3.css");
+@import url("/styles/stats-card.css");
 
 @font-face {
   font-family: 'ProductSans';
@@ -108,7 +110,12 @@ header#main-header {
   
   transition: background .4s;
 }
-
+.calendar:hover {
+  background: var(--surface-3);
+}
+.calendar:hover .dayEl:not(.failed,.passed,.current-date) {
+  background: var(--C4);
+}
 .cal-header {
 
   text-align: center;
@@ -236,11 +243,18 @@ header#main-header {
 }
 
 .passed:hover {
-  outline: 2px solid #227D36 !important;
+  outline: 2px solid #13772A !important;
 }
 .failed:hover {
-  outline: 2px solid #901E1E !important;
+  outline: 2px solid #A00F0F !important;
 }
+.dark-theme .passed:hover {
+  outline: 2px solid #54CE70 !important;
+}
+.dark-theme .failed:hover {
+  outline: 2px solid #E15757 !important;
+}
+
 .current-date.failed {
   background: linear-gradient(to bottom right, var(--today-col) 60%, var(--failed-col) 40%);
 }
@@ -249,185 +263,6 @@ header#main-header {
 }
 /* Calendar css end */
 
-/* stats and help card */
-
-.card-container {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  width: 90%;
-  
-}
-
-.card-container>div {
-  flex: 1;
-  border-radius: 20px;
-}
-
-/* Stats */
-table#stats {
-  background: var(--surface-2);
-  color: var(--text-2);
-  padding: 10px;
-  border-radius: 20px;
-  letter-spacing: .8px;
-  transition: all .4s;
-}
-
-th,
-td {
-  padding: 0 5px;
-}
-
-th {
-  text-align: left;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-tr:first-child>th {
-  text-align: center;
-  border-bottom: 2px solid var(--C4);
-  transition: outline .4s, border .4s;
-}
-
-/* Help Container */
-.help-container {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: space-between;
-  background: var(--surface-2);
-  color: var(--text-2);
-  padding: 10px 20px;
-  border-radius: 15px;
-  transition: background .4s;
-  gap: 5px;
-}
-
-.help-container .card-header {
-  flex: 1;
-  text-align: center;
-  border-bottom: 2px solid var(--C4);
-  font-weight: bold;
-  transition: all .4s;
-}
-.help-container .card-body {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.help-child {
-  display: flex;
-  flex-direction: row;
-  
-
-}
-
-.help-cols {
-  height: 20px;
-  width: 20px;
-  background: #000;
-  border-radius: 7px;
-  margin-right: 10px;
-}
-
-.help-child>div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background .4s, color .4s;
-}
-
-.passed-col {
-  background: var(--passed-col);
-}
-
-.failed-col {
-  background: var(--failed-col);
-}
-
-.today-col {
-  background: var(--today-col);
-}
-
-
-#tab3 {
-  width: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  animation: content .3s ease-in-out;
-}
-#tab3.active {
-  display: flex;
-}
-/* Help container end */
-.full-card {
-  height: 300px;
-  width: 90%;
-  border-radius: 15px;
-  background: var(--C2);
-  color: var(--text-2);
-  display: flex;
-  flex-direction: column;
-  transition: all .4s ease;
-}
-
-.full-card > .card-header, .full-card > .card-body {
-  margin: 10px;
-  margin-bottom: 0;
-  
-}
-
-.full-card > .card-header {
-  text-align: center;
-  color: var(--C19);
-  border-bottom: 2px solid var(--C4);
-  transition: all .4s ease;
-}
-#hue {
-  /*display: none;*/
-  --stops:
-    oklch(0.7885 0.228 0),
-    oklch(0.7885 0.228 40),
-    oklch(0.7885 0.228 80),
-    oklch(0.7885 0.228 120), 
-    oklch(0.7885 0.228 160), 
-    oklch(0.7885 0.228 200), 
-    oklch(0.7885 0.228 240), 
-    oklch(0.7885 0.228 280), 
-    oklch(0.7885 0.228 320), 
-    oklch(0.7885 0.228 360);
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 50px;
-  width: 100%;
-  height: 10px;
-  margin: 20px 0;
-  background-image: linear-gradient(to right, var(--stops));
-
-}
-
-::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  /* Override default look */
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 30px;
-  border: 0px rgb(255, 255, 255) solid;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  /* Cursor on hover */
-}
 
 @keyframes pop {
   0% {
@@ -460,6 +295,7 @@ sunday
 }
 */
 
+/* see dashboard button */
 #go_btn {
   width: 80%;
   height: 60px;
