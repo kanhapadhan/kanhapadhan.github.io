@@ -1,0 +1,106 @@
+/* stats card and help container */
+.card-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 90%;
+  
+}
+
+.card-container>div {
+  flex: 1;
+  border-radius: 20px;
+}
+.card-container > div:hover {
+  background: var(--surface-3);
+}
+/* Stats */
+table#stats {
+  background: var(--surface-2);
+  color: var(--text-2);
+  padding: 10px;
+  border-radius: 20px;
+  letter-spacing: .8px;
+  transition: all .4s;
+}
+table#stats:hover {
+  background: var(--surface-3);
+}
+th,
+td {
+  padding: 0 5px;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tr:first-child>th {
+  text-align: center;
+  border-bottom: 2px solid var(--C4);
+  transition: outline .4s, border .4s;
+}
+
+/* Help Container */
+.help-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  background: var(--surface-2);
+  color: var(--text-2);
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: background .4s;
+  gap: 5px;
+}
+
+.help-container .card-header {
+  flex: 1;
+  text-align: center;
+  border-bottom: 2px solid var(--C4);
+  font-weight: bold;
+  transition: all .4s;
+}
+.help-container .card-body {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.help-child {
+  display: flex;
+  flex-direction: row;
+  
+
+}
+
+.help-cols {
+  height: 20px;
+  width: 20px;
+  background: #000;
+  border-radius: 7px;
+  margin-right: 10px;
+}
+
+.help-child>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .4s, color .4s;
+}
+
+.passed-col {
+  background: var(--passed-col);
+}
+
+.failed-col {
+  background: var(--failed-col);
+}
+
+.today-col {
+  background: var(--today-col);
+}

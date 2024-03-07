@@ -1,0 +1,77 @@
+
+#tab3 {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  animation: content .3s ease-in-out;
+}
+#tab3.active {
+  display: flex;
+}
+
+.full-card {
+  height: 300px;
+  width: 90%;
+  border-radius: 15px;
+  background: var(--C2);
+  color: var(--text-2);
+  display: flex;
+  flex-direction: column;
+  transition: all .4s ease;
+}
+.full-card:hover {
+  background: var(--surface-3);
+}
+.full-card > .card-header, .full-card > .card-body {
+  margin: 10px;
+  margin-bottom: 0;
+  
+}
+
+.full-card > .card-header {
+  text-align: center;
+  color: var(--C19);
+  border-bottom: 2px solid var(--C4);
+  transition: all .4s ease;
+}
+#hue {
+  /*display: none;*/
+  --stops:
+    oklch(0.7885 0.228 0),
+    oklch(0.7885 0.228 40),
+    oklch(0.7885 0.228 80),
+    oklch(0.7885 0.228 120), 
+    oklch(0.7885 0.228 160), 
+    oklch(0.7885 0.228 200), 
+    oklch(0.7885 0.228 240), 
+    oklch(0.7885 0.228 280), 
+    oklch(0.7885 0.228 320), 
+    oklch(0.7885 0.228 360);
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50px;
+  width: 100%;
+  height: 10px;
+  margin: 20px 0;
+  background-image: linear-gradient(to right, var(--stops));
+
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 30px;
+  border: 0px rgb(255, 255, 255) solid;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  /* Cursor on hover */
+}
