@@ -7,13 +7,14 @@
   gap: var(--margin);
   letter-spacing: .8px;
   transition: all .4s;
+  animation: content .3s ease-in-out;
 }
 #tab2.active {
   display: flex;
   opacity: 1;
 }
 .card-group {
-  background: ;
+  
   padding: 10px 5px;
   border-radius: 25px;
   display: flex;

@@ -1,7 +1,7 @@
 import { monthlyData_M, exerciseData } from './data.js';
 import {findMonthlyDataArr,loadDataToCalender} from './data-functions.js';
 
-let monthlyData = exerciseData;
+let monthlyData = exerciseData.kanha;
 
 const $ = document.querySelector.bind(document);
 
@@ -69,6 +69,38 @@ const nextBtn = $('#nextBtn')
 //createCalendar(22,8,2023)
 let _data = createCalendar()
 //console.log(_data);
+
+
+
+function changeUser(monthly_data) {
+  monthlyData = monthly_data
+  _data = createCalendar(undefined,_data.month,_data.year)
+  let currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
+  loadDataToCalender(currentMonthData)
+}
+//window.changeUser = changeUser
+
+let radio_bar = document.querySelector('.radio-toolbar')
+
+radio_bar.addEventListener('input',()=>{
+  //changeUser(exerciseData[user_data.value])
+  let userdata;
+  switch (radio_bar.querySelector('input[type=radio]:checked').value) {
+    case 'atal':
+      userdata = exerciseData.atal
+      break;
+    case 'kanha':
+      userdata = exerciseData.kanha
+      break;
+    case 'data_m':
+      userdata = monthlyData_M
+    break;  
+    default:
+      userdata = exerciseData.kanha;
+  }
+  changeUser(userdata)
+})
+
 
 nextBtn.addEventListener('click', (ev) => {
   document.documentElement.style.setProperty('--anim', '25px');
