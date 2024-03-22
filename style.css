@@ -27,7 +27,7 @@ body {
   align-items: center;
   gap: 5px;
   margin-top: 60px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
   transition: background .4s ease, color .4s ease;
 
 }
@@ -98,6 +98,21 @@ header#main-header {
 #tab1.active {
   display: flex;
 }
+/* for select input 
+#user_data {
+  padding: 2px 5px;
+  margin: 5px 0;
+  border-radius: 10px;
+  font-size: inherit;
+  border: none;
+  background: var(--C3);
+  color: var(--C16);
+  outline-color: var(--C8);
+}
+#user_data:hover {
+  background: var(--C4);
+}
+*/
 /* Calendar */
 .calendar {
   flex: 1;
@@ -106,7 +121,7 @@ header#main-header {
   flex-direction: column;
 
   gap: 5px;
-  background: var(--surface-2);
+  background: var(--C2);
   border-radius: 20px;
   
   transition: background .4s;
@@ -343,6 +358,7 @@ sunday
 /* Radio toolbar css */
 .radio-toolbar-wrapper {
   display: flex;
+  width: 90%;
   background: var(--C2);
   color: var(--C18);
   border-radius: 20px;
@@ -352,7 +368,7 @@ sunday
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .radio-toolbar {
@@ -386,7 +402,7 @@ div.radio-toolbar label {
 }
 
 div.radio-toolbar input[type="radio"]:checked+label {
-  background-color: var(--C12);
+  background-color: var(--C15);
   color: var(--C2);
   
 }
