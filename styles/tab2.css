@@ -14,7 +14,6 @@
   opacity: 1;
 }
 .card-group {
-  
   padding: 10px 5px;
   border-radius: 25px;
   display: flex;
@@ -53,7 +52,7 @@
   background: var(--C3);
   
   height: 70px;
-  width: 140px;
+  width: calc(50% - 45px);
   
   border-radius: 20px;
   padding: 15px;
@@ -80,18 +79,23 @@
   transition: all .4s;
 }
 
-.passed-days {
-  background: #D7FFD2;
+.last-stats-change {
+  font-size: 13px;
+  color: #B67878;
+}
+
+.passed-days, .passed-percent {
+  background: #CDFFC7;
   --header-col: #7DB973;
   --data-col: #3B982E;
 }
 .failed-days {
-  background: #FFDEDE;
+  background: #FFD2D2;
   --header-col: #CF5F5F;
   --data-col: #A70B0B;
 }
 
-.dark-theme .passed-days {
+.dark-theme .passed-days, .dark-theme .passed-percent {
   background: #33552E;
   --header-col: #94B48E;
   --data-col: #7FFF6F;
