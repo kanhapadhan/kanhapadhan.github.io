@@ -1,5 +1,5 @@
 html {
-  --hue: 220;
+  --hue: 290;
   --sat: 70%;
   --P1: hsl(var(--hue), var(--sat), 100%);
   --P2: hsl(var(--hue), var(--sat), 95%);
