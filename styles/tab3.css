@@ -33,13 +33,11 @@
 }
 .card-body > div {
   width: 100%;
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .card-body > div > span:last-child {
-  
   background: var(--C4);
   padding: 5px 10px;
   border-radius: 10px;
@@ -57,17 +55,7 @@
 }
 #hue {
   /*display: none;*/
-  --stops:
-    oklch(0.7885 0.228 0),
-    oklch(0.7885 0.228 40),
-    oklch(0.7885 0.228 80),
-    oklch(0.7885 0.228 120), 
-    oklch(0.7885 0.228 160), 
-    oklch(0.7885 0.228 200), 
-    oklch(0.7885 0.228 240), 
-    oklch(0.7885 0.228 280), 
-    oklch(0.7885 0.228 320), 
-    oklch(0.7885 0.228 360);
+  --stops: red, yellow, green, cyan, blue, magenta, red;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 50px;
