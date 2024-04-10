@@ -13,9 +13,10 @@
 }
 
 .full-card {
-  height: 300px;
-  width: 90%;
-  border-radius: 15px;
+  height: 100px;
+  width: 85%;
+  padding: 10px;
+  border-radius: 25px;
   background: var(--C2);
   color: var(--text-2);
   display: flex;
@@ -30,7 +31,24 @@
   margin-bottom: 0;
   
 }
+.card-body > div {
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body > div > span:last-child {
+  
+  background: var(--C4);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
 
+#hueDisplay {
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
+}
 .full-card > .card-header {
   text-align: center;
   color: var(--C19);

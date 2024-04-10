@@ -23,32 +23,32 @@
     </div>
     <div id="header-title">Morning Walk+Run </div>
     <div id="theme-wrapper">
-        <div id="theme-auto" class="icon-button " title="Adapt theme to system automatically">
-          <span class="material-symbols-rounded">brightness_medium</span>
+      <div id="theme-auto" class="icon-button " title="Adapt theme to system automatically">
+        <span class="material-symbols-rounded">brightness_medium</span>
+      </div>
+      <div>
+        <div id="theme-light" class="icon-button selected" title="Always use light theme">
+          <span class="material-symbols-rounded filled">light_mode</span>
         </div>
-        <div>
-          <div id="theme-light" class="icon-button selected" title="Always use light theme">
-            <span class="material-symbols-rounded filled">light_mode</span>
-          </div>
-          <div id="theme-dark" class="icon-button" title="Always use dark theme">
-            <span class="material-symbols-rounded filled">dark_mode</span>
-          </div>
+        <div id="theme-dark" class="icon-button" title="Always use dark theme">
+          <span class="material-symbols-rounded filled">dark_mode</span>
         </div>
       </div>
+    </div>
   </header>
 
   <div id="tab1" class="content active">
-     <div class="radio-toolbar-wrapper">
-    <label for="user_data">Select User: </label>
-    <div class="radio-toolbar" id="user_data">
-      <input type="radio" name="monthly_data" id="user_data_1" value="kanha" checked>
-      <label for="user_data_1">Kanha</label>
-      <input type="radio" name="monthly_data" id="user_data_2" value="atal">
-      <label for="user_data_2">Atal</label>
-      <input type="radio" name="monthly_data" id="user_data_3" value="data_m" disabled>
-      <label for="user_data_3">data_m</label>
+    <div class="radio-toolbar-wrapper">
+      <label for="user_data">Select User: </label>
+      <div class="radio-toolbar" id="user_data">
+        <input type="radio" name="monthly_data" id="user_data_1" value="kanha" checked>
+        <label for="user_data_1">Kanha</label>
+        <input type="radio" name="monthly_data" id="user_data_2" value="atal">
+        <label for="user_data_2">Atal</label>
+        <input type="radio" name="monthly_data" id="user_data_3" value="data_m" disabled>
+        <label for="user_data_3">data_m</label>
+      </div>
     </div>
-  </div>
     <div class="calendar main-flex-child">
       <div class="cal-header">
         <div id="prevBtn">
@@ -119,12 +119,12 @@
         </div>
       </div>
     </div>
-    
+
     <div id="go_btn">
       <div>See Dashboard</div>
       <span class="material-symbols-rounded">East</span>
     </div>
-    
+
   </div>
 
   <!-- tab2 -->
@@ -148,13 +148,13 @@
         </article>
         <article class="stats-card failed-days">
           <header>
-            <h3 class="stats-title" >Failed Days</h3>
+            <h3 class="stats-title">Failed Days</h3>
           </header>
           <section class="stats-data" id="failed_days">7</section>
         </article>
         <article class="stats-card">
           <header>
-            <h3 class="stats-title" >Passed %</h3>
+            <h3 class="stats-title">Passed %</h3>
           </header>
           <section class="stats-data" id="passed_percent">65%</section>
         </article>
@@ -172,16 +172,20 @@
       </ul>
     </div>
     <div class="full-card">
-      <h3 class="card-header">Settings</h3>
+
       <div class="card-body">
-        <span>Change Theme color</span><br>
-        Hue: <span id="hueDisplay">300</span>
+        <div class="title-row">
+          <span>Change Theme color</span>
+          <span>
+            Hue: <span id="hueDisplay">300</span>
+          </span>
+        </div>
         <input type="range" name="hue" id="hue" min="0" max="360" value="300" oninput="changeHue(this.value)">
       </div>
     </div>
   </div>
 
-<!-- Bottom navigation bar -->
+  <!-- Bottom navigation bar -->
   <div class="bottom-navigation-wrapper">
     <div class="nav-item active" onclick="openTab(event, 'tab1')">
       <span class="material-symbols-rounded">home</span>
@@ -192,8 +196,8 @@
       <label for="">Dashboard</label>
     </div>
     <div class="nav-item" onclick="openTab(event, 'tab3')">
-      <span class="material-symbols-rounded">notes</span>
-      <label for="">Notes</label>
+      <span class="material-symbols-rounded">settings</span>
+      <label for="">settings</label>
     </div>
     <!-- 
     <div class="nav-item">
@@ -202,7 +206,7 @@
     </div>  -->
   </div>
 
-  
+
   <!-- scripts -->
   <script src="scripts/main.js" type="module"></script>
   <script src="theme/theme.js"></script>
