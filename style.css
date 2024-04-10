@@ -358,6 +358,7 @@ sunday
 /* Radio toolbar css */
 .radio-toolbar-wrapper {
   display: flex;
+  justify-content: center;
   width: 90%;
   background: var(--C2);
   color: var(--C18);
@@ -415,6 +416,7 @@ div.radio-toolbar input[type="radio"]+label:hover {
 }
 
 .radio-toolbar input[type="radio"]:disabled+label {
+  display: none;
   background: var(--C3);
   color: var(--C6);
 }
