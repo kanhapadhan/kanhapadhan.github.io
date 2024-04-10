@@ -369,6 +369,7 @@ sunday
   justify-content: center;
   align-items: center;
   margin-left: 10px;
+  
 }
 
 .radio-toolbar {
@@ -380,8 +381,8 @@ sunday
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  
+  
   -webkit-tap-highlight-color: transparent;
   transition: all .4s ease;
 }
@@ -391,12 +392,13 @@ div.radio-toolbar input[type="radio"] {
 }
 
 div.radio-toolbar label {
+  flex: 1;
+  text-align: center;
   background-color: var(--C4);
   color: var(--C18);
   padding: 6px 10px;
   margin: 1px;
   cursor: pointer;
-  
   border-radius: 10px;
   transition: all .4s ease;
 }
@@ -410,4 +412,9 @@ div.radio-toolbar input[type="radio"]:checked+label {
 div.radio-toolbar input[type="radio"]+label:hover {
   transition: transform .2s;
   transform: scale(1.03);
+}
+
+.radio-toolbar input[type="radio"]:disabled+label {
+  background: var(--C3);
+  color: var(--C6);
 }
