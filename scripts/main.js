@@ -32,7 +32,8 @@ function createCalendar(date, month, year) {
   daysContainer.innerHTML = ''
 
   document.querySelector('#current-month').textContent = monthNames[month] + ' - ' + year
-  
+   // in tab2 
+  document.querySelector('#current-month2').textContent = monthNames[month] + ' - ' + year
   // Create empty placeholders for the days before the first day of the month
   for (let i = 0; i < firstDayPosition; i++) {
     const placeholder = document.createElement('div');
