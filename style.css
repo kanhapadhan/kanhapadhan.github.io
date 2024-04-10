@@ -152,12 +152,15 @@ header#main-header {
   
   transition: background .4s;
 }
-
+.cal-header .material-symbols-rounded {
+  font-size: 32px;
+  color: var(--C15);
+}
 #prevBtn,
 #nextBtn {
   
-  font-size: 20pt;
-  height: 35px;width: 40px;
+  font-size: 25pt;
+  height: 35px;width: 45px;
   background: var(--C4);
   border-radius: 50px;
   display: flex;
@@ -359,11 +362,12 @@ sunday
 .radio-toolbar-wrapper {
   display: flex;
   justify-content: center;
-  width: 90%;
-  background: var(--C2);
+  width: 80%;
+  background: var(--C3);
   color: var(--C18);
-  border-radius: 20px;
+  border-radius: 25px;
   transition: all .4s ease;
+  margin: 5px;
 }
 .radio-toolbar-wrapper > label {
   display: flex;
@@ -395,7 +399,7 @@ div.radio-toolbar input[type="radio"] {
 div.radio-toolbar label {
   flex: 1;
   text-align: center;
-  background-color: var(--C4);
+  background-color: var(--C5);
   color: var(--C18);
   padding: 6px 10px;
   margin: 1px;
