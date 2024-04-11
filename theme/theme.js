@@ -74,5 +74,6 @@
     $themeLight.classList.remove("selected");
     $themeDark.classList.remove("selected");
   }
-
+setModeToLight()
+// bug: it will reset to light theme on every refresh
 })();
