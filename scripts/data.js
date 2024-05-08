@@ -66,7 +66,7 @@ let monthlyData_M = [
   {
     month: 5,
     year: 2024,
-    data: [1, -2, 3, 4]
+    data: [1, -2, 3, 4, 5, 6, 7]
 }
   // Add more months as needed
 ];
@@ -106,7 +106,7 @@ let exerciseData = {
     {
       month: 5,
       year: 2024,
-      data: [1, -2, -3, -4]
+      data: [1, -2, -3, -4, -5, -6, -7, 8]
 }
   // Add more months as needed
 ],
@@ -141,7 +141,7 @@ let exerciseData = {
     {
       month: 5,
       year: 2024,
-      data: [1, -2, -3, -4]
+      data: [1, -2, -3, -4, -5, -6, -7, 8]
 }
 
     ]

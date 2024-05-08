@@ -1,68 +1,12 @@
+import createCalendar from '/scripts/calendarBuilder.js';
 import { monthlyData_M, exerciseData } from './data.js';
-import {findMonthlyDataArr,loadDataToCalender} from './data-functions.js';
+import { findMonthlyDataArr, loadDataToCalender } from './data-functions.js';
 
+//let monthlyData = monthlyData_M;
 let monthlyData = exerciseData.kanha;
 
+
 const $ = document.querySelector.bind(document);
-
-const calendar = document.querySelector('.calendar');
-const daysContainer = document.querySelector('.days-container');
-
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-
-//function createCalendar(date = (new Date()).getDate(), month = (new Date()).getMonth() + 1, year = (new Date()).getFullYear()) {
-// try creating parameter as object 
-function createCalendar(date, month, year) {
-  // default values
-  let today = new Date()
-  
-  month = month || today.getMonth() + 1;
-  year = year || today.getFullYear();
-  
-  if (month && month==today.getMonth() + 1) {
-    date = date || today.getDate()
-  }
-  
-  month -= 1; // to make it 0-indexed
-  const daysInMonth = getDaysInMonth(year, month);
-  const firstDayPosition = new Date(year, month, 1).getDay()
-
-  // Remove existing data
-  daysContainer.innerHTML = ''
-
-  document.querySelector('#current-month').textContent = monthNames[month] + ' - ' + year
-   // in tab2 
-  document.querySelector('#current-month2').textContent = monthNames[month] + ' - ' + year
-  // Create empty placeholders for the days before the first day of the month
-  for (let i = 0; i < firstDayPosition; i++) {
-    const placeholder = document.createElement('div');
-    daysContainer.appendChild(placeholder);
-  }
-
-  // Create and populate the days of the month
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dayElement = document.createElement('div');
-    dayElement.className = 'dayEl'
-    //dayElement.style.animationDelay=(day*4)+'ms';
-    if (date && day === date) {
-      dayElement.classList.add('current-date');
-    }
-    
-    dayElement.textContent = day;
-    daysContainer.appendChild(dayElement);
-  }
-  return {
-    date:date,
-    month:month+1, // 1-12
-    year:year
-  }
-}
-
-// 0 indexed month
-function getDaysInMonth(year, month) {
-  return new Date(year, month + 1, 0).getDate();
-}
 
 
 const prevBtn = $('#prevBtn')
@@ -71,19 +15,27 @@ const nextBtn = $('#nextBtn')
 let _data = createCalendar()
 //console.log(_data);
 
+let currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
+loadDataToCalender(currentMonthData)
 
+// or try reset classes (.passed and .failed) of calendar 
+
+console.time('timer')
 
 function changeUser(monthly_data) {
   monthlyData = monthly_data
-  _data = createCalendar(undefined,_data.month,_data.year)
+  _data = createCalendar(undefined, _data.month, _data.year)
   let currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
   loadDataToCalender(currentMonthData)
 }
-//window.changeUser = changeUser
+window.changeUser = changeUser
+//changeUser(monthlyData_M)
+console.timeEnd('timer')
 
+let user_data = document.querySelector('#user_data')
 let radio_bar = document.querySelector('.radio-toolbar')
 
-radio_bar.addEventListener('input',()=>{
+radio_bar.addEventListener('input', () => {
   //changeUser(exerciseData[user_data.value])
   let userdata;
   switch (radio_bar.querySelector('input[type=radio]:checked').value) {
@@ -95,62 +47,92 @@ radio_bar.addEventListener('input',()=>{
       break;
     case 'data_m':
       userdata = monthlyData_M
-    break;  
+      break;
     default:
       userdata = exerciseData.kanha;
   }
   changeUser(userdata)
 })
 
+/*
+console.time('bb')
+let dayEls = document.querySelectorAll('.dayEl')
+dayEls.forEach(v=>{
+  if (v.classList.contains('failed')) {
+    v.classList.remove('failed')
+  } else if (v.classList.contains('passed')) {
+    v.classList.remove('passed')
+  }
+})
+monthlyData = monthlyData_M
+  
+  currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
+  loadDataToCalender(currentMonthData)
+console.timeEnd('bb')
+*/
 
 nextBtn.addEventListener('click', (ev) => {
   document.documentElement.style.setProperty('--anim', '25px');
-    let nextMonth = _data.month + 1;
-    let nextYear = _data.year;
+  let nextMonth = _data.month + 1;
+  let nextYear = _data.year;
 
-    if (nextMonth > 12) {
-        nextMonth = 1;
-        nextYear += 1;
-    }
+  if (nextMonth > 12) {
+    nextMonth = 1;
+    nextYear += 1;
+  }
 
-    _data = createCalendar(undefined, nextMonth, nextYear);
-    let currentMonthData = findMonthlyDataArr(monthlyData,_data.month, _data.year)
-    loadDataToCalender(currentMonthData)
-    
+  _data = createCalendar(undefined, nextMonth, nextYear);
+  let currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
+  loadDataToCalender(currentMonthData)
+
 });
 
 prevBtn.addEventListener('click', (ev) => {
   document.documentElement.style.setProperty('--anim', '-25px');
-    let prevMonth = _data.month - 1;
-    let prevYear = _data.year;
+  let prevMonth = _data.month - 1;
+  let prevYear = _data.year;
 
-    if (prevMonth < 1) {
-        prevMonth = 12;
-        prevYear -= 1;
-    }
+  if (prevMonth < 1) {
+    prevMonth = 12;
+    prevYear -= 1;
+  }
 
-    _data = createCalendar(undefined, prevMonth, prevYear);
-    let currentMonthData = findMonthlyDataArr(monthlyData,_data.month,_data.year)
-    loadDataToCalender(currentMonthData)
+  _data = createCalendar(undefined, prevMonth, prevYear);
+  let currentMonthData = findMonthlyDataArr(monthlyData, _data.month, _data.year)
+  loadDataToCalender(currentMonthData)
 });
 
-let currentMonthData = findMonthlyDataArr(monthlyData,_data.month, _data.year)
 
-loadDataToCalender(currentMonthData)
 
 
 // hue slider
 let hueSlider = document.querySelector('#hue')
 let hueDisplay = document.querySelector('#hueDisplay')
-hueSlider.addEventListener('input',()=>{
+/*
+hueSlider.addEventListener('input', () => {
   hueSlider
 })
-export function changeHue(hue=100) {
+*/
+export function changeHue(hue = 300) {
   document.documentElement.style.setProperty('--hue', hue);
   hueDisplay.innerHTML = hue;
 }
-window.changeHue = changeHue;
+window.changeHue = changeHue
 
+let saturationSlider = document.querySelector('#saturation')
+let saturationDisplay = document.querySelector('#saturationDisplay')
+export function changeSaturation(sat = 70) {
+  document.documentElement.style.setProperty('--sat', sat + '%');
+  saturationDisplay.innerHTML = sat;
+}
+window.changeSaturation = changeSaturation
+
+/*saturationSlider.addEventListener('input', () => {
+  let saturation = saturationSlider.value
+  changeSaturation(saturation)
+})*/
+
+// open/change tab 
 export function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("content");
@@ -167,6 +149,13 @@ export function openTab(evt, tabName) {
 
 window.openTab = openTab;
 
-document.querySelector('#go_btn').addEventListener('click',()=>{
+document.querySelector('#go_btn').addEventListener('click', () => {
   document.querySelectorAll('.bottom-navigation-wrapper>.nav-item')[1].click()
 })
+
+/*
+let palette =  ["#fff1fa", "#ffe3f4", "#ffd5ef", "#ffc7ea", "#ffb8e4", "#ffa9df", "#ff9ad9", "#ff8ad4", "#ff79cf", "#ff67c9", "#c1008d", "#b1007f", "#a00071", "#900063", "#7f0054", "#6f0047", "#5f003a", "#50002e", "#400022", "#330016"]
+palette.forEach((v,i)=>{
+  document.documentElement.style.setProperty('--P'+(i+1), v);
+})
+*/

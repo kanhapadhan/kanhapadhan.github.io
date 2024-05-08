@@ -7,7 +7,7 @@
   gap: var(--margin);
   letter-spacing: .8px;
   transition: all .4s;
-  animation: content .3s ease-in-out;
+  animation: content .3s ease;
 }
 #tab2.active {
   display: flex;
@@ -22,8 +22,8 @@
   gap: var(--margin);
 }
 .card-group .card-group-title {
-  background: var(--C3);
-  color: var(--C16);
+  background: var(--C90);
+  color: var(--C25);
   border-radius: 20px;
   width: calc(100% - 20px);
   padding: 5px 0;
@@ -47,9 +47,9 @@
   --data-col: #692E98;
   background: #F3E4FF;
   */
-  --header-col: var(--C17);
-  --data-col: var(--C14);
-  background: var(--C3);
+  --header-col: var(--C20);
+  --data-col: var(--C35);
+  background: var(--C90);
   
   height: 70px;
   width: calc(50% - 45px);

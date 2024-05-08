@@ -37,8 +37,8 @@ body {
 header#main-header {
   width: 100vw;
   height: 45px;
-  background: var(--P15);
-  color: var(--P3);
+  background: var(--C30);
+  color: var(--C90);
   position: fixed;
   top: 0;
   left: 0;
@@ -93,7 +93,7 @@ header#main-header {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  animation: content .3s ease-in-out;
+  animation: content .3s ease;
 }
 #tab1.active {
   display: flex;
@@ -105,12 +105,12 @@ header#main-header {
   border-radius: 10px;
   font-size: inherit;
   border: none;
-  background: var(--C3);
-  color: var(--C16);
-  outline-color: var(--C8);
+  background: var(--C90);
+  color: var(--C25);
+  outline-color: var(--C65);
 }
 #user_data:hover {
-  background: var(--C4);
+  background: var(--C85);
 }
 */
 /* Calendar */
@@ -121,7 +121,7 @@ header#main-header {
   flex-direction: column;
 
   gap: 5px;
-  background: var(--C2);
+  background: var(--C95);
   border-radius: 20px;
   
   transition: background .4s;
@@ -130,10 +130,10 @@ header#main-header {
   background: var(--surface-3);
 }
 .calendar:hover .dayEl:not(.failed,.passed,.current-date) {
-  background: var(--C4);
+  background: var(--C85);
 }
 .calendar:hover .weekdays {
-  border-bottom: 2px solid var(--C4);
+  border-bottom: 2px solid var(--C85);
 }
 .cal-header {
 
@@ -152,16 +152,13 @@ header#main-header {
   
   transition: background .4s;
 }
-.cal-header .material-symbols-rounded {
-  font-size: 32px;
-  color: var(--C15);
-}
+
 #prevBtn,
 #nextBtn {
   
-  font-size: 25pt;
-  height: 35px;width: 45px;
-  background: var(--C4);
+  font-size: 20pt;
+  height: 35px;width: 40px;
+  background: var(--C85);
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -212,7 +209,7 @@ header#main-header {
 .placeholderEl,
 .dayEl,
 .weekdays div {
-  background: var(--C3);
+  background: var(--C90);
   color: var(--text-2);
   display: grid;
   place-items: center;
@@ -251,7 +248,7 @@ header#main-header {
   background: var(--today-col) ;
   color: var(--surface-1);
   font-weight: bold;
-  outline: 0px dashed var(--C8);
+  outline: 0px dashed var(--C65);
   transition: border .4s, background .4s, color .4s;
 }
 .passed {
@@ -301,7 +298,7 @@ header#main-header {
 @keyframes content {
   from {
     opacity: 0;
-    transform: translateY(5%);
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
@@ -322,8 +319,8 @@ sunday
   width: 80%;
   height: 60px;
   margin-top: 10px;
-  background: var(--C3);
-  color: var(--C16);
+  background: var(--C90);
+  color: var(--C25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -336,8 +333,8 @@ sunday
 }
 
 #go_btn span {
-  background: var(--C4);
-  color: var(--C17);
+  background: var(--C85);
+  color: var(--C20);
   border-radius: 14px;
   padding: 6px 8px;
   margin: 0 15px;
@@ -345,10 +342,10 @@ sunday
 }
 
 #go_btn:hover {
-  background: var(--C4);
+  background: var(--C85);
 }
 #go_btn:hover span {
-  background: var(--C5);
+  background: var(--C80);
 }
 
 
@@ -362,12 +359,12 @@ sunday
 .radio-toolbar-wrapper {
   display: flex;
   justify-content: center;
-  width: 80%;
-  background: var(--C3);
-  color: var(--C18);
+  width: 90%; /* set 80 for 2 buttons */
+  background: var(--C90);
+  color: var(--C15);
   border-radius: 25px;
   transition: all .4s ease;
-  margin: 5px;
+  margin: 5px 0;
 }
 .radio-toolbar-wrapper > label {
   display: flex;
@@ -378,7 +375,7 @@ sunday
 }
 
 .radio-toolbar {
-  outline: 1px solid var(--C5);
+  outline: 1px solid var(--C80);
   border-radius: 10px;
   padding: 2px;
   margin: 10px;
@@ -399,8 +396,8 @@ div.radio-toolbar input[type="radio"] {
 div.radio-toolbar label {
   flex: 1;
   text-align: center;
-  background-color: var(--C5);
-  color: var(--C18);
+  background-color: var(--C85);
+  color: var(--C15);
   padding: 6px 10px;
   margin: 1px;
   cursor: pointer;
@@ -409,8 +406,8 @@ div.radio-toolbar label {
 }
 
 div.radio-toolbar input[type="radio"]:checked+label {
-  background-color: var(--C15);
-  color: var(--C2);
+  background-color: var(--C30);
+  color: var(--C95);
   
 }
 
@@ -421,6 +418,6 @@ div.radio-toolbar input[type="radio"]+label:hover {
 
 .radio-toolbar input[type="radio"]:disabled+label {
   display: none;
-  background: var(--C3);
-  color: var(--C6);
+  background: var(--C90);
+  color: var(--C75);
 }
